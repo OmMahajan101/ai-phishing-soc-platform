@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Phishing Shield</title>
+  <style>
+    body {
+      width: 320px;
+      margin: 0;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .status-card {
+      background: #1e293b;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .status-safe {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid #10b981;
+    }
+    .btn {
+      width: 100%;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h3 style="margin: 0; font-size: 15px;">🛡️ AI Phishing Shield</h3>
+  </div>
+
+  <div class="status-card">
+    <div id="status-badge" class="status-badge status-safe">PROTECTED</div>
+    <div id="current-url" style="font-size: 11px; color: #94a3b8; word-break: break-all; margin-bottom: 8px;">Loading URL...</div>
+    <div id="verdict-text" style="font-size: 13px; font-weight: 600;">Site Verified</div>
+  </div>
+
+  <button id="btn-scan" class="btn">Re-Scan Active Tab</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

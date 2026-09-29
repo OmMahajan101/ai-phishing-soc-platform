@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "AI Phishing Shield & SOC Sensor",
+  "version": "1.0.0",
+  "description": "Enterprise Chrome extension providing real-time AI phishing detection and telemetry to the SOC Platform.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "declarativeNetRequest",
+    "notifications",
+    "tabs"
+  ],
+  "host_permissions": [
+    "^<all_urls^>"
+  ],
+  "background": {
+    "service_worker": "src/background/service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["^<all_urls^>"],
+      "js": ["src/content/content_script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "AI Phishing Defense Status"
+  }
+}
